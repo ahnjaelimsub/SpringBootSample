@@ -7,11 +7,11 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class SampleController {
 
 	@GetMapping("/hello")
@@ -22,6 +22,7 @@ public class SampleController {
 	
 	@GetMapping("/ex/ex1")
 	public void ex1(Model model) {
+		System.out.println("ex/ex1");
 		List<String> list = Arrays.asList("AAA", "BBB", "CCC", "DDD");
 		model.addAttribute("list",list);
 	}

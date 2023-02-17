@@ -40,10 +40,10 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	
-	// Å¸ÀÓ¸®ÇÁ ·¹ÀÌ¾Æ¿ô
+	// Å¸ï¿½Ó¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾Æ¿ï¿½
 	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.1.0'
 	
-	// ·Òº¹ Å×½ºÆ® ¼³Á¤
+	// ï¿½Òºï¿½ ï¿½×½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
 	
@@ -56,10 +56,12 @@ dependencies {
 	annotationProcessor "jakarta.annotation:jakarta.annotation-api"
 	annotationProcessor "com.querydsl:querydsl-apt:5.0.0:jpa"
 	
-	// ¸ðµ¨ ¸ÅÆÛ
+	// ModelMapper
 	implementation 'org.modelmapper:modelmapper:3.1.0'
 
-	
+	// í™”ë©´ êµ¬ì„±
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.1.0'
 }
 
 tasks.named('test') {
@@ -70,7 +72,7 @@ tasks.withType(JavaCompile) {
 }
 
 
-//querydsl Ãß°¡ ½ÃÀÛ
+//querydsl ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½
 def querydslDir = "$buildDir/generated/querydsl"
 
 querydsl {
@@ -89,4 +91,4 @@ configurations {
    }
    querydsl.extendsFrom compileClasspath
 }
-//querydsl Ãß°¡ ³¡
+//querydsl ï¿½ß°ï¿½ ï¿½ï¿½

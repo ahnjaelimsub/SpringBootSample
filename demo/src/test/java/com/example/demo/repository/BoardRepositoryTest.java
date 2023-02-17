@@ -30,7 +30,7 @@ public class BoardRepositoryTest {
 					.wr_password("0000")
 					.build();
 			Board result = boardRepository.save(write_free);
-			System.out.println("wr_id : "+result.getWr_id());			
+			System.out.println("wr_id : "+result.getWrId());			
 		});
 	}
 	
@@ -57,10 +57,10 @@ public class BoardRepositoryTest {
 		boardRepository.deleteById(wr_id);
 	}
 	
-	// @Test
+	@Test
 	public void testPaging() {
 		System.out.println("???");
-		Pageable pageable = PageRequest.of(0, 10, Sort.by("wr_id").descending());
+		Pageable pageable = PageRequest.of(0, 10);
 		Page<Board> result = boardRepository.findAll(pageable);
 		System.out.println("total count : "+result.getTotalElements());
 		System.out.println("total pages : "+result.getTotalPages());
@@ -74,7 +74,7 @@ public class BoardRepositoryTest {
 	// @Test
 	public void testSearch1() {
 		System.out.println("...?");
-		Pageable pageable = PageRequest.of(1, 10, Sort.by("wr_id").descending());
+		Pageable pageable = PageRequest.of(1, 10, Sort.by("wrId").descending());
 		boardRepository.search1(pageable);
 	}
 	
@@ -83,7 +83,7 @@ public class BoardRepositoryTest {
 		System.out.println("...???");
 		String[] types = {"t","c","w"};
 		String keyword = "1";
-		Pageable pageable = PageRequest.of(0, 10, Sort.by("wr_id").descending());
+		Pageable pageable = PageRequest.of(0, 10, Sort.by("wrId").descending());
 		Page<Board> result = boardRepository.searchAll(types, keyword, pageable);
 		System.out.println(result.getSize());
 		System.out.println(result.hasPrevious()+" : "+result.hasNext());

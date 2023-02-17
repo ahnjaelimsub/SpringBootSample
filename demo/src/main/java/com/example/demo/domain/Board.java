@@ -23,18 +23,19 @@ public class Board extends BaseEntity{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long wr_id;
+	@Column(name = "wr_id")
+	private Long wrId;
 
-	@Column(length = 500, nullable = false)
+	@Column(name = "wr_subject", length = 500, nullable = false)
 	private	String wr_subject;
 	
-	@Column(length = 2000, nullable = false)
+	@Column(name = "wr_content", length = 2000, nullable = false)
 	private	String wr_content;
 	
-	@Column(length = 50, nullable = false)
+	@Column(name = "wr_name", length = 50, nullable = false)
 	private	String wr_name;
 
-	@Column(length = 50, nullable = false)
+	@Column(name = "wr_password", length = 50, nullable = false)
 	private	String wr_password;
 	
 	public void change(String wr_subject, String wr_content) {

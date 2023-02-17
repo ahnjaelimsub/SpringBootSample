@@ -29,9 +29,9 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
 		booleanBuilder.or(board.wr_subject.contains("1"));
 		
 		query.where(booleanBuilder);
-		query.where(board.wr_id.gt(0L));
+		query.where(board.wrId.gt(0L));
 		
-		// ÆäÀÌÂ¡
+		// ï¿½ï¿½ï¿½ï¿½Â¡
 		// this.getQuerydsl().applyPagination(pageable, query);
 		
 		List<Board> list = query.fetch();
@@ -63,10 +63,11 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
 			query.where(booleanBuilder);
 		} // end of if 
 		
-		query.where(board.wr_id.gt(0L));
+		query.where(board.wrId.gt(0L));
 		
 		// paging
-		// this.getQuerydsl().applyPagination(pageable, query);
+		this.getQuerydsl().applyPagination(pageable, query);
+		
 		List<Board> list = query.fetch();
 		long count = query.fetchCount();
 		

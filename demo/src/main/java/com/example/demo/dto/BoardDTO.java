@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BoardDTO {
-	private Long wr_id;
+	private Long wrId;
 	private String wr_subject;
 	private String wr_content;
 	private String wr_name;
